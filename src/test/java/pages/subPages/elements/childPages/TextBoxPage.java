@@ -84,10 +84,13 @@ public class TextBoxPage extends ElementsPage {
     }
 
     public boolean validateCompleteOutput(){
-        return isOutputFullNameCorrect()
+        boolean validationResult =  isOutputFullNameCorrect()
                 && isOutputEmailCorrect()
                 && isOutputCurrentAddressCorrect()
                 && isOutputPermanentAddressCorrect();
+
+        System.out.println(validationResult ? "validation is done - data is correct" : "validation not done - incorrect data !");
+        return validationResult;
     }
 
 }
