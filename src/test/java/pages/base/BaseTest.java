@@ -10,7 +10,7 @@ import utilities.PropertiesUtility;
 import java.time.Duration;
 
 public class BaseTest {
-    private final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     @BeforeMethod
     public void initDriver(){
@@ -31,7 +31,7 @@ public class BaseTest {
         driverThreadLocal.set(driverInstance);
     }
 
-    public WebDriver getDriver(){
+    public static WebDriver getDriver(){
         return driverThreadLocal.get();
     }
 

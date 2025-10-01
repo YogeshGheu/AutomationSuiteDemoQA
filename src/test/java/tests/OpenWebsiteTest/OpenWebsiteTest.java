@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 import pages.base.BaseTest;
 
 public class OpenWebsiteTest extends BaseTest {
-    @Test
+    @Test(description = "test opening the website")
     public void testOpeningWebsite(){
-        WebDriver driver = getDriver();
+        WebDriver driver = BaseTest.getDriver();
         Assert.assertEquals(driver.getTitle(), "DEMOQA", "Test Failed - Page title did not matched. Actual Title: " + driver.getTitle());
     }
 }
