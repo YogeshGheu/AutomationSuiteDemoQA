@@ -9,6 +9,8 @@ import utilities.ActionsUtility;
 import utilities.JavaScriptUtility;
 import utilities.WaitUtility;
 
+import java.util.List;
+
 public class BasePage {
     protected WebDriver driver;
     WaitUtility waitUtility;
@@ -35,6 +37,11 @@ public class BasePage {
             System.out.println("Error occurred while clicking, trying javascript click ! " + e.getMessage());
             javaScriptUtility.jsClick(find(locator));
         }
+    }
+
+    public List<WebElement> findAll(By locator){
+        waitUtility.waitForElementToBeVisible(locator);
+        return driver.findElements(locator);
     }
 
     public void sendKeys(By locator, String text) {

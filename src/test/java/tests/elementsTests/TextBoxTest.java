@@ -11,10 +11,7 @@ public class TextBoxTest extends BaseTest {
     @Test(description = "test the text box functionality")
     public void testTextBox() throws RuntimeException{
         TextBoxPage textBoxPage = new Homepage(BaseTest.getDriver()).clickElementsTile().clickTextBoxLabelFromDropdown();
-        Assert.fail();
         textBoxPage.fillAndSubmitTextBoxForm("Yogesh Gheu", "yogeshgheu@gmail.com", "Hisar", "Hisar, Haryana");
         Assert.assertTrue(textBoxPage.validateCompleteOutput());
-        throw new RuntimeException("hello");
-
     }
 }

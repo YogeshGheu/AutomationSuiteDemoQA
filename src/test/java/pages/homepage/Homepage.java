@@ -7,21 +7,17 @@ import pages.subPages.elements.ElementsPage;
 
 public class Homepage extends BasePage {
 
+    private final By elementsTile = By.xpath("//div/descendant::h5[text()=\"Elements\"]");
+
     public Homepage(WebDriver driver){
         super(driver);
         this.driver = driver;
     }
 
-    private final By elementsTile = By.xpath("//div/descendant::h5[text()=\"Elements\"]");
-
     public ElementsPage clickElementsTile(){
         click(elementsTile);
         return new ElementsPage(driver);
     }
-
-
-
-
 
 
 
