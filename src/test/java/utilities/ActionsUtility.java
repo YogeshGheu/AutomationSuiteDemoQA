@@ -6,18 +6,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class ActionsUtility {
+public class ActionsUtility extends BaseUtility{
 
-    WebDriver driver;
-    Actions actions;
-
-
-    public ActionsUtility(WebDriver driver) {
-        this.driver = driver;
-        actions = new Actions(driver);
-    }
-
-    public void moveToElement(By locator) {
-        actions.moveToElement(driver.findElement(locator)).perform();
+    public static void moveToElement(By locator) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getDriver().findElement(locator)).perform();
     }
 }

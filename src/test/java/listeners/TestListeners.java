@@ -9,6 +9,7 @@ import org.testng.ITestResult;
 import pages.base.BaseTest;
 import utilities.ExtentReportsUtility;
 import utilities.ScreenshotUtility;
+//import utilities.ScreenshotUtility;
 
 public class TestListeners implements ITestListener {
     ExtentReports reports;
@@ -29,8 +30,7 @@ public class TestListeners implements ITestListener {
         ExtentReportsUtility.getTest().fail("test case failed! : " + result.getMethod().getDescription());
         ExtentReportsUtility.getTest().fail(result.getThrowable());
 
-        WebDriver driver = BaseTest.getDriver();
-        String screenshotString = new ScreenshotUtility(driver).getScreenshotAsBase64();
+        String screenshotString = ScreenshotUtility.getScreenshotAsBase64();
         ExtentReportsUtility.getTest().addScreenCaptureFromBase64String(screenshotString);
         ExtentReportsUtility.getTest().log(Status.FAIL, "Screenshot: <br><img src='data:image/png;base64," + screenshotString + "' height='360' width='640' />");
     }

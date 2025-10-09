@@ -6,21 +6,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class WaitUtility {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+public class WaitUtility extends BaseUtility{
 
-    public WaitUtility(WebDriver driver){
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-    }
-
-    public void waitForElementToBeVisible(By locator){
+    public static void waitForElementToBeVisible(By locator){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void waitForElementToBeVisible(By locator, int forSeconds){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(forSeconds));
+    public static void waitForElementToBeVisible(By locator, int forSeconds){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(forSeconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
