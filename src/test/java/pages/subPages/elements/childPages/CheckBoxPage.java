@@ -8,16 +8,17 @@ import pages.base.BasePage;
 import java.util.List;
 
 public class CheckBoxPage extends BasePage {
-    private final By homeCheckBox = By.xpath("//input[@id=\"tree-node-home\"]/following-sibling::span[@class='rct-checkbox']");
-    private final List<WebElement> allResultElements = findAll(By.xpath("//span[@class=\"text-success\"]"));
-    public CheckBoxPage(WebDriver driver){
+    private final By homeCheckBox = By.xpath("//span[text()=\"Home\"]");
+    public CheckBoxPage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickOnHomeCheckBox(){
+    public void clickOnHomeCheckBox() {
         click(homeCheckBox);
     }
-    public int allResultsCount(){
+
+    public int allResultsCount() {
+        List<WebElement> allResultElements = findAll(By.xpath("//span[@class=\"text-success\"]"));
         return allResultElements.size();
     }
 

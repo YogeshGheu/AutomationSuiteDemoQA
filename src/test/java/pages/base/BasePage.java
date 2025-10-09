@@ -39,7 +39,7 @@ public class BasePage {
         }
     }
 
-    public List<WebElement> findAll(By locator){
+    public List<WebElement> findAll(By locator) {
         waitUtility.waitForElementToBeVisible(locator);
         return driver.findElements(locator);
     }
