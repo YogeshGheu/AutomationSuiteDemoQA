@@ -14,3 +14,4 @@ public class JavaScriptUtility extends BaseUtility{
         ((JavascriptExecutor)getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
+
