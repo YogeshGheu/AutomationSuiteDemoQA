@@ -12,4 +12,9 @@ public class ActionsUtility extends BaseUtility{
         Actions actions = new Actions(getDriver());
         actions.moveToElement(getDriver().findElement(locator)).perform();
     }
+
+    public static void pressKeys(String sequence){
+        Actions actions = new Actions(getDriver());
+        actions.sendKeys(sequence);
+    }
 }
