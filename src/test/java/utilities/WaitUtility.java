@@ -18,4 +18,12 @@ public class WaitUtility extends BaseUtility{
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    public static void threadSleep(int seconds){
+        try {
+            Thread.sleep(seconds);
+        }catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
 }
