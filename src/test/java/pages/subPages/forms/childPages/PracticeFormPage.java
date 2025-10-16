@@ -32,7 +32,7 @@ public class PracticeFormPage extends BasePage {
 
     private final By currentAddress = By.id("currentAddress");
 
-    private final By stateField = By.id("state");
+    private final By stateField = By.xpath("//div[text()=\"Select State\"]");
 
     private final By cityField = By.xpath("//div[text()=\"Select City\"]");
     private final By cityKarnal = By.id("react-select-4-option-0");

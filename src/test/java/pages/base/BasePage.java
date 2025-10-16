@@ -29,8 +29,9 @@ public class BasePage {
             find(locator);
             ActionsUtility.moveToElement(locator);
             find(locator).click();
+            System.out.println("clicked on - " + locator);
         } catch (ElementClickInterceptedException e) {
-            System.out.println("Error occurred while clicking, trying javascript click ! ");
+            System.out.println("Error occurred while clicking the element - " + locator + ", trying javascript click ! ");
             JavaScriptUtility.jsClick(find(locator));
         }
     }

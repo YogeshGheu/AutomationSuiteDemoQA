@@ -46,7 +46,7 @@ public class TestListeners implements ITestListener {
     }
 
     public void onFinish(ITestContext context) {
-        System.out.println("test suite execution is finished");
         reports.flush();
+        System.out.println("test suite execution is finished");
     }
 }
