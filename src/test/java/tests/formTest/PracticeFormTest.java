@@ -22,7 +22,7 @@ public class PracticeFormTest extends BaseTest {
         formsPage.setSubjects();
         formsPage.setHobbies(true, false, true);
 
-        formsPage.uploadPicture("/Users/yogeshgheu/Downloads/account.jpeg");
+        formsPage.uploadPicture("src/test/resources/public/images/demoImage.jpg");
 
         formsPage.setCurrentAddress(
                 "City - Hisar\n" +

@@ -1,5 +1,6 @@
 package pages.subPages.forms.childPages;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
@@ -8,7 +9,9 @@ import utilities.SelectUtility;
 import utilities.WaitUtility;
 
 import javax.swing.*;
+import java.io.File;
 
+@Slf4j
 public class PracticeFormPage extends BasePage {
 
     private final By firstNameField = By.id("firstName");
@@ -93,7 +96,9 @@ public class PracticeFormPage extends BasePage {
     }
 
     public void uploadPicture(String filePath) {
-        sendKeys(pictureUploadButton, filePath);
+        File file = new File(filePath);
+        String absolutePath = file.getAbsolutePath();
+        sendKeys(pictureUploadButton, absolutePath);
     }
 
     public void setCurrentAddress(String address) {
