@@ -108,12 +108,14 @@ public class PracticeFormPage extends BasePage {
     public void selectState(String state) {
 //        By stateLocator = ;
         click(stateField);
+        sendKeys(By.id("react-select-3-input"), state);
         click(By.xpath("//div[text()=\"" + state + "\"]"));
     }
 
     public void selectCity(String city){
 //        By cityLocator = ;
         click(cityField);
+        sendKeys(By.id("react-select-4-input"), city);
         click(By.xpath("//div[text()=\"" + city + "\"]"));
     }
 
