@@ -6,11 +6,11 @@
     <listeners>
         <listener class-name="listeners.TestListeners"/>
     </listeners>
-    <test verbose="2" parallel="false" thread-count="2" preserve-order="true" name="/Users/yogeshgheu/Documents/Testing/AutomationSuiteDemoQA">
+    <test verbose="2" parallel="classes" thread-count="4" preserve-order="true" name="/Users/yogeshgheu/Documents/Testing/AutomationSuiteDemoQA">
         <classes>
-<!--            <class name="tests.OpenWebsiteTest.OpenWebsiteTest"/>-->
-<!--            <class name="tests.elementsTests.TextBoxTest"/>-->
-<!--            <class name="tests.elementsTests.CheckBoxTest"/>-->
+            <class name="tests.OpenWebsiteTest.OpenWebsiteTest"/>
+            <class name="tests.elementsTests.TextBoxTest"/>
+            <class name="tests.elementsTests.CheckBoxTest"/>
             <class name="tests.formTest.PracticeFormTest"/>
         </classes>
     </test>
