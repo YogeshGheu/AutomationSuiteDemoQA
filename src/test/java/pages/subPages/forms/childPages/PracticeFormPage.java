@@ -3,7 +3,6 @@ package pages.subPages.forms.childPages;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
 import pages.base.BasePage;
 import utilities.ActionsUtility;
 import utilities.SelectUtility;
@@ -107,14 +106,14 @@ public class PracticeFormPage extends BasePage {
     }
 
     public void selectState(String state) {
-        click(stateField);
         By stateLocator = By.xpath("//div[text()='" + state + "']");
+        click(stateField);
         click(stateLocator);
     }
 
     public void selectCity(String city){
-        click(cityField);
         By cityLocator = By.xpath("//div[text()='" + city + "']");
+        click(cityField);
         click(cityLocator);
     }
 
