@@ -18,6 +18,11 @@ public class WaitUtility extends BaseUtility{
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    public static void waitForElementToBeClickable(By locator, int forSeconds){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(forSeconds));
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
     public static void threadSleep(int seconds){
         try {
             Thread.sleep(seconds);

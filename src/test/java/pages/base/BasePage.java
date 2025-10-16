@@ -26,9 +26,9 @@ public class BasePage {
 
     public void click(By locator) {
         try {
-            find(locator);
+            WebElement e1 = find(locator);
             ActionsUtility.moveToElement(locator);
-            find(locator).click();
+            e1.click();
             System.out.println("clicked on - " + locator);
         } catch (ElementClickInterceptedException e) {
             System.out.println("Error occurred while clicking the element - " + locator + ", trying javascript click ! ");
