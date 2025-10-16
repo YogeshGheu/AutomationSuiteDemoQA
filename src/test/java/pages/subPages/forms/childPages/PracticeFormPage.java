@@ -106,15 +106,15 @@ public class PracticeFormPage extends BasePage {
     }
 
     public void selectState(String state) {
-        By stateLocator = By.xpath("//div[text()='" + state + "']");
+//        By stateLocator = ;
         click(stateField);
-        click(stateLocator);
+        click(By.xpath("//div[text()=\"" + state + "\"]"));
     }
 
     public void selectCity(String city){
-        By cityLocator = By.xpath("//div[text()='" + city + "']");
+//        By cityLocator = ;
         click(cityField);
-        click(cityLocator);
+        click(By.xpath("//div[text()=\"" + city + "\"]"));
     }
 
     public void submitForm(){
