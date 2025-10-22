@@ -23,9 +23,14 @@ public class WaitUtility extends BaseUtility{
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
+    public static void waitUntilAlertIsPresent(int seconds){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(seconds * 1000L));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     public static void threadSleep(int seconds){
         try {
-            Thread.sleep(seconds);
+            Thread.sleep(seconds * 1000L);
         }catch (InterruptedException e){
             System.out.println(e.getMessage());
         }

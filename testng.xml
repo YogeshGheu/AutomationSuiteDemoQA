@@ -12,6 +12,7 @@
             <class name="tests.elementsTests.TextBoxTest"/>
             <class name="tests.elementsTests.CheckBoxTest"/>
             <class name="tests.formTest.PracticeFormTest"/>
+            <class name="tests.AFWTest.AlertsTest"/>
         </classes>
     </test>
 </suite>
