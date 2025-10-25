@@ -25,8 +25,6 @@ public class BaseTest {
         options.addArguments("--window-size=1920,1080");
 
         WebDriver driverInstance = new ChromeDriver(options);
-        // to resolve worker null issue in CI
-        WaitUtility.threadSleep(3000);
         driverInstance.manage().window().maximize();
         driverInstance.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20L));
         if(baseUrl != null){
