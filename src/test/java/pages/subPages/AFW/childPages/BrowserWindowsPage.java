@@ -51,7 +51,6 @@ public class BrowserWindowsPage extends BasePage {
 
     public void clickGetNewWindowMessageButton(){
         click(getNewWindowMessageButton);
-        WaitUtility.threadSleep(3);
         generateUpdateWindowIdsChild();
         System.out.println(windowsIds);
     }
