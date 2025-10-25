@@ -3,9 +3,11 @@ package pages.base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utilities.PropertiesUtility;
+import utilities.WaitUtility;
 
 import java.time.Duration;
 
@@ -40,7 +42,7 @@ public class BaseTest {
     @AfterMethod
     public void teardown(){
         if(driverThreadLocal.get() != null){
-            driverThreadLocal.get().close();
+            driverThreadLocal.get().quit();
             driverThreadLocal.remove();
         }
     }
