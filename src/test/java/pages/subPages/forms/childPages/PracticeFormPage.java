@@ -3,6 +3,7 @@ package pages.subPages.forms.childPages;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.base.BasePage;
 import utilities.ActionsUtility;
 import utilities.SelectUtility;
@@ -39,7 +40,7 @@ public class PracticeFormPage extends BasePage {
 
     private final By submitButton = By.id("submit");
 
-    private final By tanksHeading = By.xpath("//div[text()=\"Thanks for submitting the form\"]");
+    private final By thanksHeading = By.xpath("//div[text()=\"Thanks for submitting the form\"]");
 
     public PracticeFormPage(WebDriver driver) {
         super(driver);
@@ -121,7 +122,8 @@ public class PracticeFormPage extends BasePage {
         click(submitButton);
     }
 
-    public boolean isTanksPopupDisplayed(){
-        return find(tanksHeading).isDisplayed();
+    public boolean isThanksPopupDisplayed(){
+        WaitUtility.waitForElementToBeVisible(thanksHeading, 5);
+        return find(thanksHeading).isDisplayed();
     }
 }

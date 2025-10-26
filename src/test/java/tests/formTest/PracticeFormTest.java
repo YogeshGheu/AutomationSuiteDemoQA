@@ -35,6 +35,6 @@ public class PracticeFormTest extends BaseTest {
 
         formsPage.submitForm();
 
-        Assert.assertTrue(formsPage.isTanksPopupDisplayed());
+        Assert.assertTrue(formsPage.isThanksPopupDisplayed());
     }
 }
