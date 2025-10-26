@@ -1,15 +1,13 @@
 package pages.base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import utilities.ActionsUtility;
 import utilities.BaseUtility;
 import utilities.JavaScriptUtility;
 import utilities.WaitUtility;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BasePage {
     protected WebDriver driver;
@@ -20,19 +18,22 @@ public class BasePage {
     }
 
     public WebElement find(By locator) {
-        WaitUtility.waitForElementToBeVisible(locator);
-        return driver.findElement(locator);
+        try{
+            return driver.findElement(locator);
+        }catch (TimeoutException e){
+            return WaitUtility.waitForElementToBeVisible(locator);
+        }
     }
 
     public void click(By locator) {
+        WebElement e1 = find(locator);
         try {
-            WebElement e1 = find(locator);
-            ActionsUtility.moveToElement(locator);
+            ActionsUtility.moveToElement(e1);
             e1.click();
             System.out.println("clicked on - " + locator);
         } catch (ElementClickInterceptedException e) {
-            System.out.println("Error occurred while clicking the element - " + locator + ", trying javascript click ! ");
-            JavaScriptUtility.jsClick(find(locator));
+            System.out.println("Error (ElementClickInterceptedException) occurred while clicking the element - " + locator + ", trying javascript click ! ");
+            JavaScriptUtility.jsClick(e1);
         }
     }
 
