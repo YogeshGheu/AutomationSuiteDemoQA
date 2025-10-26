@@ -7,7 +7,6 @@ import utilities.JavaScriptUtility;
 import utilities.WaitUtility;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class BasePage {
     protected WebDriver driver;
@@ -20,7 +19,8 @@ public class BasePage {
     public WebElement find(By locator) {
         try{
             return driver.findElement(locator);
-        }catch (TimeoutException e){
+        }catch (NoSuchElementException e){
+            System.out.println("failed to immediately locate the element - trying to locate with explicit wait of 20 seconds");
             return WaitUtility.waitForElementToBeVisible(locator);
         }
     }
