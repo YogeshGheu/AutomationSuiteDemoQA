@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run automation framework
-      run: mvn clean test -Dsuite=testng.xml -Djava.util.concurrent.ForkJoinPool.common.parallelism=2 -Dthreadcount=2 -Dmaven.test.failure.ignore=true
+      run: mvn clean test -Dsuite=testng-ci.xml
 
 
     - name: Upload a Build Artifact
