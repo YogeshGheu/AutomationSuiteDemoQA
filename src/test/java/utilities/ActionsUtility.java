@@ -5,13 +5,23 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ActionsUtility extends BaseUtility{
 
+    private static Actions getActions(){
+        return new Actions(getDriver());
+    }
+
     public static void moveToElement(WebElement element) {
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement(element).perform();
+        getActions().moveToElement(element).perform();
     }
 
     public static void pressKeys(String sequence){
-        Actions actions = new Actions(getDriver());
-        actions.sendKeys(sequence);
+        getActions().sendKeys(sequence);
+    }
+
+    public static void doubleClick(WebElement element){
+        getActions().doubleClick(element).perform();
+    }
+
+    public static void rightClick(WebElement element){
+        getActions().contextClick(element).perform();
     }
 }
