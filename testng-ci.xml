@@ -14,6 +14,7 @@
             <class name="tests.elementsTests.TextBoxTest"/>
             <class name="tests.elementsTests.CheckBoxTest"/>
             <class name="tests.elementsTests.RadioButtonsTest"/>
+            <class name="tests.elementsTests.ButtonsTest"/>
 
             <class name="tests.formTest.PracticeFormTest"/>
 
