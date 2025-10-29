@@ -30,7 +30,7 @@
                     <threadCount>1</threadCount>
                     <forkCount>1</forkCount>
                     <useSystemClassLoader>false</useSystemClassLoader>
-                    <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+                    <forkedProcessTimeoutInSeconds>60</forkedProcessTimeoutInSeconds>
                 </configuration>
             </plugin>
         </plugins>

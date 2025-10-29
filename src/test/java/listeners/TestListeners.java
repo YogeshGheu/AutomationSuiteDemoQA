@@ -30,9 +30,14 @@ public class TestListeners implements ITestListener {
         ExtentReportsUtility.getTest().fail("test case failed! : " + result.getMethod().getDescription());
         ExtentReportsUtility.getTest().fail(result.getThrowable());
 
-        String screenshotString = ScreenshotUtility.getScreenshotAsBase64();
-        ExtentReportsUtility.getTest().addScreenCaptureFromBase64String(screenshotString);
-        ExtentReportsUtility.getTest().log(Status.FAIL, "Screenshot: <br><img src='data:image/png;base64," + screenshotString + "' height='360' width='640' />");
+        try {
+            String screenshotString = ScreenshotUtility.getScreenshotAsBase64();
+            ExtentReportsUtility.getTest().addScreenCaptureFromBase64String(screenshotString);
+            ExtentReportsUtility.getTest().log(Status.FAIL, "Screenshot: <br><img src='data:image/png;base64," + screenshotString + "' height='360' width='640' />");
+
+        }catch (Exception e){
+            System.out.println("Failed to take a screenshot : " + e.getMessage());
+        }
     }
 
     public void onTestSkipped(ITestResult result) {
