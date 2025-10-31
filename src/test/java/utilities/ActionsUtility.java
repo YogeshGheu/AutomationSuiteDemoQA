@@ -22,6 +22,6 @@ public class ActionsUtility extends BaseUtility{
     }
 
     public static void rightClick(WebElement element){
-        getActions().contextClick(element).perform();
+        getActions().moveToElement(element).contextClick(element).perform();
     }
 }
