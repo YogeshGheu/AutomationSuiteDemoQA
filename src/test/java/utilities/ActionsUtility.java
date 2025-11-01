@@ -18,7 +18,7 @@ public class ActionsUtility extends BaseUtility{
     }
 
     public static void doubleClick(WebElement element){
-        getActions().moveToElement(element).doubleClick(element).perform();
+        getActions().moveToElement(element).click().doubleClick(element).perform();
     }
 
     public static void rightClick(WebElement element){
