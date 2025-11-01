@@ -7,7 +7,7 @@ import pages.homepage.Homepage;
 import pages.subPages.elements.childPages.ButtonsPage;
 
 public class ButtonsTest extends BaseTest {
-    @Test(description = "test the buttons functionality", invocationCount = 10)
+    @Test(description = "test the buttons functionality")
     public void testButtons(){
         Homepage homepage = new Homepage(getDriver());
         ButtonsPage buttonsPage = homepage.clickElementsTile().clickButtonsLabelFromDropdown();
