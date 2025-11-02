@@ -16,6 +16,7 @@
             <class name="tests.elementsTests.RadioButtonsTest"/>
             <class name="tests.elementsTests.ButtonsTest"/>
             <class name="tests.elementsTests.LinksTest"/>
+            <class name="tests.elementsTests.DynamicPropertiesTest"/>
 
             <class name="tests.formTest.PracticeFormTest"/>
 
