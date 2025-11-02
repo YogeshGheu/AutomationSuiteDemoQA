@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run automation framework
-      run: mvn clean test -Dsuite=testng-ci.xml
+      run: mvn clean test -Dsuite=testng-local.xml
 
 
     - name: Upload a Build Artifact
