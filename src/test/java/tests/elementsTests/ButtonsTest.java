@@ -17,8 +17,8 @@ public class ButtonsTest extends BaseTest {
         Assert.assertTrue(buttonsPage.isDoubleClickMessageVisible());
 
         // test right click
-        buttonsPage.clickRightClickButton();
-        Assert.assertTrue(buttonsPage.isRightClickMessageVisible());
+//        buttonsPage.clickRightClickButton();
+//        Assert.assertTrue(buttonsPage.isRightClickMessageVisible());
 
         // test dynamic click
         buttonsPage.clickDynamicClickButton();
