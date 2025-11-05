@@ -12,7 +12,7 @@ import utilities.WaitUtility;
 
 public class AlertsTest extends BaseTest {
 
-    @Test(description = "test alerts functionality is working")
+    @Test(description = "test alerts functionality")
     public void testAlerts() {
         Homepage homepage = new Homepage(getDriver());
         AlertsPage alertsPage = homepage.clickAFWTile().clickMenuItemAlerts();
