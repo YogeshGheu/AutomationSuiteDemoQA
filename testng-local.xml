@@ -5,6 +5,7 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="listeners.TestListeners"/>
+        <listener class-name="listeners.RetryFailedTestsListener"/>
     </listeners>
     <test verbose="2" parallel="classes" thread-count="4" preserve-order="true" name="AutomationSuiteDemoQA">
         <classes>
