@@ -2,14 +2,16 @@ package listeners;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import pages.base.BaseTest;
+import utilities.EmailSendUtility;
 import utilities.ExtentReportsUtility;
+import utilities.PropertiesUtility;
 import utilities.ScreenshotUtility;
-//import utilities.ScreenshotUtility;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class TestListeners implements ITestListener {
     ExtentReports reports;
@@ -52,6 +54,14 @@ public class TestListeners implements ITestListener {
 
     public void onFinish(ITestContext context) {
         reports.flush();
-        System.out.println("test suite execution is finished");
+        System.out.println("test suite execution is finished, sending the report over email.");
+
+        String[] recipients = Arrays.stream(Objects.requireNonNull(PropertiesUtility.get("EMAIL_RECIPIENTS")).split(",")).map(String::trim).toArray(String[]::new);
+
+        String subject = "DemoQA - Automation Suite Report";
+        String body = "Hi Team,\n\nPlease find the attached latest automation test report.\n\nRegards,\nYogesh";
+        String reportPath = System.getProperty("user.dir") + "/target/extentReports/extent-report.html";
+
+        EmailSendUtility.sendReportOnEmails(recipients, subject, body, reportPath);
     }
 }
