@@ -5,10 +5,7 @@ import com.aventstack.extentreports.Status;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utilities.EmailSendUtility;
-import utilities.ExtentReportsUtility;
-import utilities.PropertiesUtility;
-import utilities.ScreenshotUtility;
+import utilities.*;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -54,14 +51,24 @@ public class TestListeners implements ITestListener {
 
     public void onFinish(ITestContext context) {
         reports.flush();
-        System.out.println("test suite execution is finished, sending the report over email.");
+        System.out.println("test suite execution is finished, sending the report over email and alert on Teams");
 
+        // send alert on teams channel
+        int passed = context.getPassedTests().size();
+        int failed = context.getFailedTests().size();
+        int skipped = context.getSkippedTests().size();
+        int total = passed + failed + skipped;
+        String summary = String.format(
+                "Test Suite Execution Finished*\nTotal: %d\nPassed: %d\nFailed: %d\nSkipped: %d",
+                total, passed, failed, skipped
+        );
+        TeamsAlertUtility.sendAlertOnTeamsChannel(summary);
+
+        // send execution report on recipients email
         String[] recipients = Arrays.stream(Objects.requireNonNull(PropertiesUtility.get("EMAIL_RECIPIENTS")).split(",")).map(String::trim).toArray(String[]::new);
-
         String subject = "DemoQA - Automation Suite Report";
         String body = "Hi Team,\n\nPlease find the attached latest automation test report.\n\nRegards,\nYogesh";
         String reportPath = System.getProperty("user.dir") + "/target/extentReports/extent-report.html";
-
         EmailSendUtility.sendReportOnEmails(recipients, subject, body, reportPath);
     }
 }
