@@ -7,12 +7,14 @@ import pages.subPages.AFW.AlertsFrameWindowsPage;
 import pages.subPages.elements.ElementsPage;
 import pages.subPages.forms.FormsPage;
 import pages.subPages.forms.childPages.PracticeFormPage;
+import pages.subPages.widgets.WidgetsPage;
 
 public class Homepage extends BasePage {
 
     private final By elementsTile = By.xpath("//div/descendant::h5[text()=\"Elements\"]");
     private final By formsTile = By.xpath("//div/descendant::h5[text()=\"Forms\"]");
     private final By AFWTile = By.xpath("//h5[text()=\"Alerts, Frame & Windows\"]");
+    private final By WidgetsTile = By.xpath("//h5[text()=\"Widgets\"]");
 
     public Homepage(WebDriver driver){
         super(driver);
@@ -34,6 +36,10 @@ public class Homepage extends BasePage {
         return new AlertsFrameWindowsPage(driver);
     }
 
+    public WidgetsPage clickWidgetsTile(){
+        click(WidgetsTile);
+        return new WidgetsPage(driver);
+    }
 
 
 

@@ -20,7 +20,7 @@ public class BasePage {
         try{
             return driver.findElement(locator);
         }catch (NoSuchElementException e){
-            System.out.println("failed to immediately locate the element - trying to locate with explicit wait of 20 seconds");
+            System.out.println("failed to immediately locate the element - trying to locate with explicit wait of 20 seconds - " + locator);
             return WaitUtility.waitForElementToBeVisible(locator);
         }
     }

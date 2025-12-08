@@ -65,10 +65,10 @@ public class TestListeners implements ITestListener {
         TeamsAlertUtility.sendAlertOnTeamsChannel(summary);
 
         // send execution report on recipients email
-        String[] recipients = Arrays.stream(Objects.requireNonNull(PropertiesUtility.get("EMAIL_RECIPIENTS")).split(",")).map(String::trim).toArray(String[]::new);
-        String subject = "DemoQA - Automation Suite Report";
-        String body = "Hi Team,\n\nPlease find the attached latest automation test report.\n\nRegards,\nYogesh";
-        String reportPath = System.getProperty("user.dir") + "/target/extentReports/extent-report.html";
-        EmailSendUtility.sendReportOnEmails(recipients, subject, body, reportPath);
+//        String[] recipients = Arrays.stream(Objects.requireNonNull(PropertiesUtility.get("EMAIL_RECIPIENTS")).split(",")).map(String::trim).toArray(String[]::new);
+//        String subject = "DemoQA - Automation Suite Report";
+//        String body = "Hi Team,\n\nPlease find the attached latest automation test report.\n\nRegards,\nYogesh";
+//        String reportPath = System.getProperty("user.dir") + "/target/extentReports/extent-report.html";
+//        EmailSendUtility.sendReportOnEmails(recipients, subject, body, reportPath);
     }
 }

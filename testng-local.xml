@@ -10,19 +10,21 @@
     <test verbose="2" parallel="classes" thread-count="4" preserve-order="true" name="AutomationSuiteDemoQA">
         <classes>
 
-            <class name="tests.OpenWebsiteTest.OpenWebsiteTest"/>
+<!--            <class name="tests.OpenWebsiteTest.OpenWebsiteTest"/>-->
 
-            <class name="tests.elementsTests.TextBoxTest"/>
-            <class name="tests.elementsTests.CheckBoxTest"/>
-            <class name="tests.elementsTests.RadioButtonsTest"/>
-            <class name="tests.elementsTests.ButtonsTest"/>
-            <class name="tests.elementsTests.LinksTest"/>
-            <class name="tests.elementsTests.DynamicPropertiesTest"/>
+<!--            <class name="tests.elementsTests.TextBoxTest"/>-->
+<!--            <class name="tests.elementsTests.CheckBoxTest"/>-->
+<!--            <class name="tests.elementsTests.RadioButtonsTest"/>-->
+<!--            <class name="tests.elementsTests.ButtonsTest"/>-->
+<!--            <class name="tests.elementsTests.LinksTest"/>-->
+<!--            <class name="tests.elementsTests.DynamicPropertiesTest"/>-->
 
-            <class name="tests.formTest.PracticeFormTest"/>
+<!--            <class name="tests.formTest.PracticeFormTest"/>-->
 
-            <class name="tests.AFWTest.AlertsTest"/>
-            <class name="tests.AFWTest.BrowserWindowsTest"/>
+<!--            <class name="tests.AFWTest.AlertsTest"/>-->
+<!--            <class name="tests.AFWTest.BrowserWindowsTest"/>-->
+
+            <class name="tests.widgetsTest.ToolTipTest"/>
 
         </classes>
     </test>
